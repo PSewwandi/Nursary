@@ -3,6 +3,8 @@ import { StudentService } from './../../shared/student.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import { Student } from './../../shared/student.model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-student',
@@ -10,6 +12,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
+  list: Student[];
+  total:string;
+  regNumberPart:number;
+  totalNumberPart:number;
+  n:number;
 constructor(private service: StudentService,
   private firestore:AngularFirestore,
   private toastr : ToastrService)
@@ -17,6 +24,7 @@ constructor(private service: StudentService,
 
   ngOnInit() {
     this.resetForm();
+    this.getRegNumber();
   }
   resetForm(form?:NgForm){
     if(form!=null)
@@ -24,7 +32,7 @@ constructor(private service: StudentService,
       this.service.formData={
         id:null,
         fullName:'',
-        regNumber:'',
+        regNumber:this.total,
         year:'',
         enteredDay:null,
         phone:'',
@@ -38,6 +46,8 @@ constructor(private service: StudentService,
     let data= Object.assign({},form.value);
     delete data.id;
     if(form.value.id==null){
+      data.regNumber=this.total;
+      data.enteredDay=moment(new Date(data.enteredDay)).format("YYYY-MM-DD");
       this.firestore.collection('students').add(data);
       this.toastr.success("Submitted Successfully!!!");
     }
@@ -46,6 +56,29 @@ constructor(private service: StudentService,
     this.toastr.success("Updated Successfully!!!");
     }
     this.resetForm(form);
+  }
+
+  getRegNumber(){
+    this.service.getStudents().subscribe(actionArray=>{
+      this.list=actionArray.map(item=>{
+        return{
+          id:item.payload.doc.id,
+          ...item.payload.doc.data()
+              } as Student;
+      })
+      this.total="0";
+      if(this.list){
+        this.totalNumberPart=parseInt(this.total);
+        for(let stdnt of this.list){
+          this.regNumberPart=parseInt(stdnt.regNumber.slice(1));
+          if(this.regNumberPart>=this.totalNumberPart){
+            this.totalNumberPart=this.regNumberPart;
+           }
+        }
+      }
+      this.totalNumberPart=this.totalNumberPart+1;
+      this.total="S00"+this.totalNumberPart;
+    });
   }
 
 }
