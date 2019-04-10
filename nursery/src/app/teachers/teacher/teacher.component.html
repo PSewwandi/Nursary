@@ -1,0 +1,55 @@
+<div class="row">
+  <strong><h4 class="display-5" style="color:springgreen">Teachers Registration</h4></strong>
+  </div>
+  <form #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  
+    <mat-form-field class="example-full-width">
+      <input  matInput placeholder="full name" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" required>
+      <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">This field is required.</div>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input  matInput name="tNumber" #tNumber="ngModel" [(ngModel)]="service.formData.tNumber" value={{total}} minlength="4" placeholder="Teacher Number">
+      <div *ngIf="tNumber.errors?.minlength && tNumber.touched" class="validation-error">Teacher number at least 4 characters long starts with T</div>
+    </mat-form-field>
+  
+    <div class="form-row">
+      <div class="form-group  col-md-6">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" name="enteredDay" #enteredDay="ngModel" [(ngModel)]="service.formData.enteredDay" placeholder="Entered date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+        
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <input  matInput name="phone" #phone="ngModel" [(ngModel)]="service.formData.phone" minlength="10" maxlength="10" placeholder="phone" required>
+        <div *ngIf="phone.invalid && phone.touched" class="validation-error">This field is required.</div>
+        <div *ngIf="phone.errors?.minlength" class="validation-error">This field must contain ony 10 characters.</div>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <input  matInput name="address" #address="ngModel" [(ngModel)]="service.formData.address" placeholder="Address">
+      </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width">
+      <input  matInput name="age" #age="ngModel" [(ngModel)]="service.formData.age" placeholder="Age">
+    </mat-form-field>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  
+  </form>
+  
+  
+  

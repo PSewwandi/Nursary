@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  
   firebaseConfig : {
     apiKey: "AIzaSyCAZe64tjaFaU0_29vL2nqs9sacZTWMklA",
     authDomain: "nursary-681ba.firebaseapp.com",

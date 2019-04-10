@@ -51,6 +51,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { from } from 'rxjs';
+import { TeachersComponent } from './teachers/teachers.component';
+import { TeacherComponent } from './teachers/teacher/teacher.component';
+import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { from } from 'rxjs';
     StudentsComponent,
     StudentComponent,
     StudentListComponent,
-    DashboardComponent
+    DashboardComponent,
+    TeachersComponent,
+    TeacherComponent,
+    TeacherListComponent
   ],
   imports: [
     CommonModule,

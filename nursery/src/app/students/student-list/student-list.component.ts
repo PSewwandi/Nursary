@@ -13,7 +13,8 @@ import { firestore } from 'firebase';
 })
 export class StudentListComponent implements OnInit {
   list: Student[];
-  size:number;
+  //name: Student[];
+  
 
   constructor(private service:StudentService,
     private firestore:AngularFirestore,
@@ -22,6 +23,17 @@ export class StudentListComponent implements OnInit {
      }
 
   ngOnInit() {
+    // let d=this.firestore.collection('students',ref => ref.where('year', '==','1')).snapshotChanges()
+    // d.subscribe(res=>{
+    //   this.name=res.map(item=>{
+    //     return{
+    //       id:item.payload.doc.id,
+    //       ...item.payload.doc.data()
+    //           } as Student;
+    //  })
+    //  for(let i of this.name)
+    //  console.log(i.fullName,i.address,i.enteredDay);
+    // });
 
 
     this.service.getStudents().subscribe(actionArray=>{
