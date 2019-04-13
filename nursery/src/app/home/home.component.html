@@ -207,7 +207,7 @@
 <div id="contact" class="container">
   <h3 class="text-center">Contact</h3>
   <p class="text-center"><em>We love our fans!</em></p>
-
+  <form [formGroup]="contactForm">
   <div class="row">
     <div class="col-md-4">
       <p>Fan? Drop a note.</p>
@@ -218,21 +218,22 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          <input class="form-control" id="contactFormName" name="name" placeholder="Name" type="text" formControlName="contactFormName" [(ngModel)]="itemName">
         </div>
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          <input class="form-control" name="email" placeholder="Email" type="email"  id="contactFormEmail" formControlName="contactFormEmail" [(ngModel)]="itemEmail">
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <textarea class="form-control" name="comments" placeholder="Comment" rows="5" id="contactFormMessage" formControlName="contactFormMessage"  [(ngModel)]="itemMessage"></textarea>
       <br>
       <div class="row">
         <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
+          <button class="btn pull-right" type="submit" [disabled]="contactForm.invalid" (click)="onSubmit()" (click)="clearForm()">Send</button>
         </div>
       </div>
     </div>
   </div>
+  </form>
   <br>
   <h3 class="text-center">From The Blog</h3>  
   <ul class="nav nav-tabs">
