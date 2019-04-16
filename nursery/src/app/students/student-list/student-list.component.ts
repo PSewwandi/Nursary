@@ -12,10 +12,9 @@ import { firestore } from 'firebase';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  //define variavles and objects
   list: Student[];
-  //name: Student[];
   
-
   constructor(private service:StudentService,
     private firestore:AngularFirestore,
     private toastr:ToastrService) {
@@ -23,18 +22,6 @@ export class StudentListComponent implements OnInit {
      }
 
   ngOnInit() {
-    // let d=this.firestore.collection('students',ref => ref.where('year', '==','1')).snapshotChanges()
-    // d.subscribe(res=>{
-    //   this.name=res.map(item=>{
-    //     return{
-    //       id:item.payload.doc.id,
-    //       ...item.payload.doc.data()
-    //           } as Student;
-    //  })
-    //  for(let i of this.name)
-    //  console.log(i.fullName,i.address,i.enteredDay);
-    // });
-
 
     this.service.getStudents().subscribe(actionArray=>{
       this.list=actionArray.map(item=>{
@@ -52,10 +39,14 @@ export class StudentListComponent implements OnInit {
     this.service.formData = Object.assign({},stdnt);
   }
 
-  onDelete(id: string){
+  onDelete(student:Student){
     if(confirm("Are you sure to delete this record")){
-        this.firestore.doc("students/"+id).delete();
-        this.toastr.warning("Deleted Successfully");
+     
+      console.log(student);
+      this.firestore.collection('pastStudents').add(student);
+  
+      this.firestore.doc("students/"+student.id).delete();
+     this.toastr.warning("Deleted Successfully");
     }
   } 
 
