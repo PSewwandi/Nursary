@@ -54,6 +54,10 @@ import { from } from 'rxjs';
 import { TeachersComponent } from './teachers/teachers.component';
 import { TeacherComponent } from './teachers/teacher/teacher.component';
 import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
+import { StudentsAttendanceComponent } from './students/students-attendance/students-attendance.component';
+import { ViewAttendanceComponent } from './students/view-attendance/view-attendance.component';
+import { FeesComponent } from './students/fees/fees.component';
+import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,11 @@ import { TeacherListComponent } from './teachers/teacher-list/teacher-list.compo
     DashboardComponent,
     TeachersComponent,
     TeacherComponent,
-    TeacherListComponent
+    TeacherListComponent,
+    StudentsAttendanceComponent,
+    ViewAttendanceComponent,
+    FeesComponent,
+    ViewPastStudentsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,29 @@
+<form #form="ngForm" (submit)="viewAttendance(form)">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" name="date" #date="ngModel" [(ngModel)]="service.formdate" placeholder="Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-lg btn-primary" [routerLink]="'/viewAttendance'" >submit</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <th>student registration number</th>
+    <th>Present/Absent</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of attendance | keyvalue">
+
+      <td>{{item.key}}</td>
+      <td>{{item.value}}</td>
+    </tr>
+  </tbody>
+</table>
+</form>

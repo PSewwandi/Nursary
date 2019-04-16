@@ -1,0 +1,25 @@
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+      <h3 style="color:chocolate">Students Fees Details</h3>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<br><br>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <th>Student registration number</th>
+    <th>Student Name</th>
+    <th>Student Studying Year</th>
+    <th>Phone Number</th>
+    <th>Last Fee Paid Month</th>
+  </thead>
+  <tr class="table-warning" *ngFor="let stdnt of students">
+    <td>{{stdnt.regNumber}}</td>
+    <td>{{stdnt.fullName}}</td>
+    <td>{{stdnt.year}}</td>
+    <td>{{stdnt.phone}}</td>
+    <td>{{stdnt.fee}}</td>
+  </tr>
+</table>
