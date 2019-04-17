@@ -58,6 +58,7 @@ import { StudentsAttendanceComponent } from './students/students-attendance/stud
 import { ViewAttendanceComponent } from './students/view-attendance/view-attendance.component';
 import { FeesComponent } from './students/fees/fees.component';
 import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
+import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-frame.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { ViewPastStudentsComponent } from './students/view-past-students/view-pa
     StudentsAttendanceComponent,
     ViewAttendanceComponent,
     FeesComponent,
-    ViewPastStudentsComponent
+    ViewPastStudentsComponent,
+    DashboardFrameComponent
   ],
   imports: [
     CommonModule,

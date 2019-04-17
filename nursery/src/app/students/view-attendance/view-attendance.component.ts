@@ -21,17 +21,19 @@ export class ViewAttendanceComponent implements OnInit {
   listKey:string[];
   attendance:Map<string,string>;
   form:NgForm
+ 
+ 
 
-  constructor( private firestore:AngularFirestore, private service: StudentService) { }
+  constructor( private firestore:AngularFirestore, private service: StudentService, private router: Router) { }
 
   ngOnInit() {
     this.listVal=[];
     this.listKey=[];
     this.attendance=new Map();
 
+
 }
 viewAttendance( form:NgForm){
-
   let date = moment(new Date(form.value.date)).format("YYYY-MM-DD");
   
   this.service.getAttendance(date).subscribe(actionArray=>{
@@ -40,11 +42,8 @@ viewAttendance( form:NgForm){
         ...item.payload.doc.get('attendance')
             }
     });
-
-   
+    if(this.attend.length>0){
     for(let i of this.attend){
-      //console.log(i);
-      
       for(let v of Object.values(i)){
         this.listVal.push(v);
       }
@@ -52,16 +51,16 @@ viewAttendance( form:NgForm){
         this.listKey.push(k);
       }
     }
-    // console.log(this.listKey);
-    // console.log(this.listVal);
     let n=this.listKey.length
     for(var i=0;i<n;i++){
       this.attendance.set(this.listKey[i],this.listVal[i]);
     }
+  }else{
+    this.attendance=new Map();
+  }
 });
-
+  
 }
-
 
 
 }

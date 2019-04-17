@@ -8,6 +8,8 @@
     <th>Address</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </thead>
 
   <tbody>
@@ -15,10 +17,9 @@
       <td>{{teacher.tNumber}}</td>
       <td>{{teacher.fullName}}</td>
       <td>{{teacher.enteredDay}}</td>
-      <td>{{teacher.year}}</td>
+      <td>{{teacher.age}}</td>
       <td>{{teacher.phone}}</td>
       <td>{{teacher.address}}</td>
-      <td>{{teacher.fee}}</td>
       <td><a class="btn text-danger" (click)="onDelete(teacher.id)"><i class="fa fa-trash"></i></a></td>
       <td><a class="btn text-primary" (click)="onEdit(teacher)"><i class="fa fa-edit"></i></a></td>
     </tr>

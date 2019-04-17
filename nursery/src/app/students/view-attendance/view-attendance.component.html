@@ -1,29 +1,57 @@
-<form #form="ngForm" (submit)="viewAttendance(form)">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" name="date" #date="ngModel" [(ngModel)]="service.formdate" placeholder="Date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="submit" class="btn btn-lg btn-primary" [routerLink]="'/viewAttendance'" >submit</button>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-  
-<table class="table table-hover">
-  <thead class="thead-dark">
-    <th>student registration number</th>
-    <th>Present/Absent</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of attendance | keyvalue">
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+  <body class="w3-light-grey">
+    <app-dashboard-frame></app-dashboard-frame>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <form #form="ngForm" (submit)="viewAttendance(form)">
+          <div class="row">
+            <div class="col-md-3"></div><br>
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" name="date" #date="ngModel" [(ngModel)]="service.formdate" placeholder="Date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              &nbsp;&nbsp;
+              <button type="submit" class="btn btn-lg btn-primary" >submit</button>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <th>student registration number</th>
+              <th>Present/Absent</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of attendance | keyvalue">
 
-      <td>{{item.key}}</td>
-      <td>{{item.value}}</td>
-    </tr>
-  </tbody>
-</table>
-</form>
+                <td>{{item.key}}</td>
+                <td>{{item.value}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div> 
+    
+    <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+  </footer>
+  </body>
+</html>
+
+
+
+
+
