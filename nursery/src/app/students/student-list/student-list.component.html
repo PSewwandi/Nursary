@@ -1,23 +1,29 @@
 <table class="table table-hover">
-
-  <th>Name</th>
-  <th>Entered Date</th>
-  <th>Year</th>
-  <th>Mobile</th>
-  <th>Address</th>
-  <th>Fee</th>
+  <thead class="thead-dark">
+    <th>Reg. Number</th>
+    <th>Name</th>
+    <th>Entered Date</th>
+    <th>Year</th>
+    <th>Mobile</th>
+    <th>Address</th>
+    <th>Fee</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </thead>
 
   <tbody>
     <tr *ngFor="let stdnt of list">
-      <td>{{stdnt.regNumber}} - {{stdnt.fullName}}</td>
+      <td>{{stdnt.regNumber}}</td>
+      <td>{{stdnt.fullName}}</td>
       <td>{{stdnt.enteredDay}}</td>
       <td>{{stdnt.year}}</td>
       <td>{{stdnt.phone}}</td>
       <td>{{stdnt.address}}</td>
       <td>{{stdnt.fee}}</td>
-      <td><a class="btn text-danger" (click)="onDelete(stdnt.id)"><i class="fa fa-trash"></i></a></td>
+      <td><a class="btn text-danger" (click)="onDelete(stdnt)"><i class="fa fa-trash"></i></a></td>
       <td><a class="btn text-primary" (click)="onEdit(stdnt)"><i class="fa fa-edit"></i></a></td>
     </tr>
   </tbody>
 
 </table>
+

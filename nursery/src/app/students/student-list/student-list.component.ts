@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from './../../shared/student.service';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Student } from './../../shared/student.model';
 import { ToastrService } from 'ngx-toastr';
+import { firestore } from 'firebase';
+
 
 @Component({
   selector: 'app-student-list',
@@ -10,12 +12,17 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  //define variavles and objects
   list: Student[];
+  
   constructor(private service:StudentService,
     private firestore:AngularFirestore,
-    private toastr:ToastrService) { }
+    private toastr:ToastrService) {
+   
+     }
 
   ngOnInit() {
+
     this.service.getStudents().subscribe(actionArray=>{
       this.list=actionArray.map(item=>{
         return{
@@ -27,14 +34,19 @@ export class StudentListComponent implements OnInit {
   }
 
 
+
   onEdit(stdnt: Student){
     this.service.formData = Object.assign({},stdnt);
   }
 
-  onDelete(id: string){
+  onDelete(student:Student){
     if(confirm("Are you sure to delete this record")){
-        this.firestore.doc("students/"+id).delete;
-        this.toastr.warning("Deleted Successfully");
+     
+      console.log(student);
+      this.firestore.collection('pastStudents').add(student);
+  
+      this.firestore.doc("students/"+student.id).delete();
+     this.toastr.warning("Deleted Successfully");
     }
   } 
 

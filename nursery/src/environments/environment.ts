@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  
   firebaseConfig : {
     apiKey: "AIzaSyCAZe64tjaFaU0_29vL2nqs9sacZTWMklA",
     authDomain: "nursary-681ba.firebaseapp.com",
@@ -13,6 +14,7 @@ export const environment = {
     messagingSenderId: "796005598353"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  // Adding variables
+  itemName = '';
+  itemEmail = '';
+  itemMessage = '';
+  items: Observable<any[]>;
+  contactForm: FormGroup;
+  
+  constructor(
+    private db:AngularFirestore,
+    private fb: FormBuilder) {
+      this.items = db.collection('messages').valueChanges()
+      this.contactForm = fb.group({
+        contactFormName: ['', Validators.required],
+        contactFormEmail: ['', [Validators.required, Validators.email]],
+        contactFormMessage: ['', Validators.required]
+     });
+   }
 
   ngOnInit() {
+  }
+
+  onSubmit()  {
+    this.db.collection('/messages').add({ name: this.itemName, email: this.itemEmail, 
+      message: this.itemMessage});
+//Popup message
+    alert('Thank you for contacting us, your message has gone through!')
+   }
+
+    // Clearing the form after submit
+  clearForm() {
+    this.contactForm.reset();
   }
 
 }
