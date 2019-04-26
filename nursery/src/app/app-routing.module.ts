@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 <<<<<<< HEAD
-<<<<<<< HEAD
 import { ForumComponent } from './forum/forum.component';
 
 =======
@@ -14,15 +13,12 @@ import { ViewAttendanceComponent } from './students/view-attendance/view-attenda
 import { FeesComponent } from './students/fees/fees.component';
 import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
-=======
->>>>>>> parent of 1addcf6... first
 
 export const routes: Routes = [
   { path:'',redirectTo:'home',pathMatch:'full'},
   { path:'', component:HomeComponent},
   { path:'dashboard',component: DashboardComponent},
   { path:'students',component:StudentsComponent},
-<<<<<<< HEAD
 <<<<<<< HEAD
   { path:'forum', component: ForumComponent}
 =======
@@ -32,8 +28,6 @@ export const routes: Routes = [
   { path:'viewFees',component:FeesComponent},
   { path:'viewPastStudents',component:ViewPastStudentsComponent}
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
-=======
->>>>>>> parent of 1addcf6... first
 ];
 
 @NgModule({

@@ -28,13 +28,10 @@
     "core-js": "^2.5.4",
     "firebase": "^5.9.1",
 <<<<<<< HEAD
-<<<<<<< HEAD
     "ngx-owl-carousel-o": "^1.1.1",
 =======
     "moment": "^2.24.0",
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
-=======
->>>>>>> parent of 1addcf6... first
     "ngx-toastr": "^10.0.2",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
