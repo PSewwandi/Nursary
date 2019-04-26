@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ForumComponent } from './forum/forum.component';
 
 
@@ -69,6 +70,8 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
 =======
 >>>>>>> parent of 1addcf6... first
+=======
+>>>>>>> parent of 1addcf6... first
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +79,7 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     StudentsComponent,
     StudentComponent,
     StudentListComponent,
+<<<<<<< HEAD
 <<<<<<< HEAD
     DashboardComponent,
 <<<<<<< HEAD
@@ -90,6 +94,9 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     ViewPastStudentsComponent,
     DashboardFrameComponent
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
+=======
+    DashboardComponent
+>>>>>>> parent of 1addcf6... first
 =======
     DashboardComponent
 >>>>>>> parent of 1addcf6... first

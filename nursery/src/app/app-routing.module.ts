@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ForumComponent } from './forum/forum.component';
 
 =======
@@ -16,12 +17,15 @@ import { ViewPastStudentsComponent } from './students/view-past-students/view-pa
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
 =======
 >>>>>>> parent of 1addcf6... first
+=======
+>>>>>>> parent of 1addcf6... first
 
 export const routes: Routes = [
   { path:'',redirectTo:'home',pathMatch:'full'},
   { path:'', component:HomeComponent},
   { path:'dashboard',component: DashboardComponent},
   { path:'students',component:StudentsComponent},
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   { path:'forum', component: ForumComponent}
@@ -32,6 +36,8 @@ export const routes: Routes = [
   { path:'viewFees',component:FeesComponent},
   { path:'viewPastStudents',component:ViewPastStudentsComponent}
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
+=======
+>>>>>>> parent of 1addcf6... first
 =======
 >>>>>>> parent of 1addcf6... first
 ];
