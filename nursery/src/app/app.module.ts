@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ForumComponent } from './forum/forum.component';
 
 
@@ -66,6 +67,8 @@ import { ViewPastStudentsComponent } from './students/view-past-students/view-pa
 import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-frame.component';
 
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
+=======
+>>>>>>> parent of 1addcf6... first
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,7 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     StudentsComponent,
     StudentComponent,
     StudentListComponent,
+<<<<<<< HEAD
     DashboardComponent,
 <<<<<<< HEAD
     ForumComponent
@@ -86,6 +90,9 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     ViewPastStudentsComponent,
     DashboardFrameComponent
 >>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
+=======
+    DashboardComponent
+>>>>>>> parent of 1addcf6... first
   ],
   imports: [
     CommonModule,
