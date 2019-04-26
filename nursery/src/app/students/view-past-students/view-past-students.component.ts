@@ -17,7 +17,7 @@ export class ViewPastStudentsComponent implements OnInit {
     private firestore:AngularFirestore) { }
 
   ngOnInit() {
-    this.service.getStudents().subscribe(actionArray=>{
+    this.service.getPastStudents().subscribe(actionArray=>{
       this.list=actionArray.map(item=>{
         return{
           id:item.payload.doc.id,

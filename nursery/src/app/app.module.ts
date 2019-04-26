@@ -15,15 +15,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { ForumComponent } from './forum/forum.component';
-
-
-=======
-
-
 
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material';
@@ -67,11 +58,6 @@ import { FeesComponent } from './students/fees/fees.component';
 import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
 import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-frame.component';
 
->>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
-=======
->>>>>>> parent of 1addcf6... first
-=======
->>>>>>> parent of 1addcf6... first
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,12 +65,7 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     StudentsComponent,
     StudentComponent,
     StudentListComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
     DashboardComponent,
-<<<<<<< HEAD
-    ForumComponent
-=======
     TeachersComponent,
     TeacherComponent,
     TeacherListComponent,
@@ -92,14 +73,8 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     ViewAttendanceComponent,
     FeesComponent,
     ViewPastStudentsComponent,
-    DashboardFrameComponent
->>>>>>> a71946d8b04cc27dc11d0a9a0b37b3810a9f2cbe
-=======
-    DashboardComponent
->>>>>>> parent of 1addcf6... first
-=======
-    DashboardComponent
->>>>>>> parent of 1addcf6... first
+    DashboardFrameComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
