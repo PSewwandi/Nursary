@@ -1,0 +1,73 @@
+<div class="row">
+  <strong><h3 class="display-5" style="color:cornflowerblue">Manage News Forum</h3></strong>
+</div>
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+
+  <mat-form-field class="example-full-width">
+    <input  matInput name="pNo" #pNo="ngModel" [(ngModel)]="service.formData.pNo" value={{total}} minlength="4" placeholder="Post Number">
+    <div *ngIf="pNo.errors?.minlength && pNo.touched" class="validation-error">Post number at least 4 characters long starts with P</div>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input  matInput placeholder="Title" name="title" #title="ngModel" [(ngModel)]="service.formData.title" required>
+    <div *ngIf="title.invalid && title.touched" class="validation-error">This field is required.</div>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea  matInput placeholder="Description " name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
+  </mat-form-field>
+
+  <div class="form-row">
+    <div class="form-group  col-md-6">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" name="date" #date="ngModel" [(ngModel)]="service.formData.date" placeholder="Date of Publish" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <div *ngIf="date.invalid && date.touched" class="validation-error">This field is required.</div>
+      </mat-form-field>
+    </div>        
+  </div>
+  <div class="dropzone" 
+     dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="detectFilesDrag($event)"
+     [class.hovering]="isHovering">
+
+
+     <h3>Drag and drop a File</h3>
+     <div class="file">
+      <label class="file-label">
+
+
+      <input class="file-input" type="file" (change)="detectFiles($event)" multiple>
+
+
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fa fa-upload"></i>
+          </span>
+          <span class="file-label">
+            or choose a file…
+          </span>
+        </span>
+      </label>
+    </div>
+</div>
+<h3>Uploads</h3>
+
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info" >SUBMIT</button>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</form>
+
+<div *ngFor="let file of files">
+  <upload-task [file]="file" [postno]="postNo"></upload-task>
+</div>

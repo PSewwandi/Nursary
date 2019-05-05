@@ -1,0 +1,12 @@
+body {font-family: "Lato", sans-serif}
+.mont{
+    font-family: "Montserrat", sans-serif;
+}
+.news{
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-top: 10px;
+}
+.accordion{
+    margin-bottom: 10px;
+}
