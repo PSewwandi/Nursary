@@ -1,7 +1,7 @@
 <div class="row">
-  <strong><h3 class="display-5" style="color:cornflowerblue">Manage News Forum</h3></strong>
+  <strong><h3 class="display-5" style="color:cornflowerblue;font-size: 25px;">Manage News Forum</h3></strong>
 </div>
-<form #form="ngForm" (submit)="onSubmit(form)">
+<form #form="ngForm" (submit)="onSubmit(form)" class="forms"> 
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
   <mat-form-field class="example-full-width">
@@ -28,6 +28,7 @@
       </mat-form-field>
     </div>        
   </div>
+  <h3 class="addImage">Add Images</h3>
   <div class="dropzone" 
      dropzone
      (hovered)="toggleHover($event)"
