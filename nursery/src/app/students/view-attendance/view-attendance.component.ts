@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 import { MapType } from '@angular/compiler';
 import * as moment from 'moment';
 import { forEach } from '@angular/router/src/utils/collection';
+import { Student } from 'src/app/shared/student.model';
 
 @Component({
   selector: 'app-view-attendance',
@@ -30,8 +31,6 @@ export class ViewAttendanceComponent implements OnInit {
     this.listVal=[];
     this.listKey=[];
     this.attendance=new Map();
-
-
 }
 viewAttendance( form:NgForm){
   let date = moment(new Date(form.value.date)).format("YYYY-MM-DD");
@@ -43,18 +42,19 @@ viewAttendance( form:NgForm){
             }
     });
     if(this.attend.length>0){
-    for(let i of this.attend){
-      for(let v of Object.values(i)){
-        this.listVal.push(v);
+      for(let i of this.attend){
+        for(let v of Object.values(i)){
+          this.listVal.push(v);
+        }
+        for(let k of Object.keys(i) ){
+          this.listKey.push(k);
+        }
+        
       }
-      for(let k of Object.keys(i) ){
-        this.listKey.push(k);
+      let n=this.listKey.length
+      for(var i=0;i<n;i++){
+        this.attendance.set(this.listKey[i],this.listVal[i]);
       }
-    }
-    let n=this.listKey.length
-    for(var i=0;i<n;i++){
-      this.attendance.set(this.listKey[i],this.listVal[i]);
-    }
   }else{
     this.attendance=new Map();
   }
