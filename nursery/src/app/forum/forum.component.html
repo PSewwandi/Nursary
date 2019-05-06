@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thusitha Pre School</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+	<div class="w3-top">
+	  <div class="w3-bar w3-card w3-black" style="opacity: 0.8">
+	    <img class="" src="/assets/logo.jpg" style="width:200px;height: 46px;">
+	    <div class="w3-right mont">
+	      <a href="#" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">HOME</a>
+	      <a href="/home/#vision" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">VISION</a>
+	      <a href="/home/#aboutus" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">ABOUT</a>
+        <a href="/home/#staff" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">STAFF</a>
+        <a [routerLink]="'/forum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">NEWS & BLOG</a>
+	      <a href="/home/#contact" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">CONTACT</a>
+	      
+	      
+	    </div>
+	  </div>
+  </div>
+  <div class="w3-content" style="max-width:2000px;margin-top:46px;">
+    <div class="content" style="height: auto;">
+        <h2 class="mont" style="padding: 35px 25px 0;">News & Blog</h2>
+        <hr style="border-color: rgba(0,0,0,0.2);">
+        <div class="news">
+          <mat-accordion class="accordion">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Personal data
+                </mat-panel-title>
+                <mat-panel-description>
+                  Type your name and age
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+              <mat-form-field>
+                <input matInput placeholder="First name">
+              </mat-form-field>
+          
+              <mat-form-field>
+                <input matInput placeholder="Age">
+              </mat-form-field>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        
+    </div>
+
+  </div>
+  
+</body>
+</html>

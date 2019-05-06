@@ -15,7 +15,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './shared/post.service';
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
@@ -57,6 +58,13 @@ import { ViewAttendanceComponent } from './students/view-attendance/view-attenda
 import { FeesComponent } from './students/fees/fees.component';
 import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
 import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-frame.component';
+import { ForumComponent } from './forum/forum.component';
+import { ForumAdminComponent } from './forum-admin/forum-admin.component';
+import { ForumAdminsComponent } from './forum-admin/forum-admins/forum-admins.component';
+import { ForumAdminListComponent } from './forum-admin/forum-admin-list/forum-admin-list.component';
+import { DropzoneDirective } from './dropzone.directive';
+import { UploadTaskComponent } from './forum-admin/upload-task/upload-task.component';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -75,6 +83,12 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     ViewPastStudentsComponent,
     DashboardFrameComponent,
     DashboardComponent,
+    ForumComponent,
+    ForumAdminComponent,
+    ForumAdminsComponent,
+    ForumAdminListComponent,
+    DropzoneDirective,
+    UploadTaskComponent,
   ],
   imports: [
     CommonModule,
@@ -85,7 +99,7 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     BrowserAnimationsModule, // required animations module
-    
+    HttpClientModule,
     //material modules
     MatCheckboxModule,
     MatCheckboxModule,
@@ -121,7 +135,7 @@ import { DashboardFrameComponent } from './dashboard/dashboard-frame/dashboard-f
     MatPaginatorModule,
     ToastrModule.forRoot(),
   ],
-  providers: [MatDatepickerModule],
+  providers: [MatDatepickerModule,AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
