@@ -30,33 +30,23 @@
   </div>
   <div class="w3-content" style="max-width:2000px;margin-top:46px;">
     <div class="content" style="height: auto;">
-        <h2 class="mont" style="padding: 35px 25px 0;">News & Blog</h2>
-        <hr style="border-color: rgba(0,0,0,0.2);">
-        <div class="news">
-          <mat-accordion class="accordion">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Personal data
-                </mat-panel-title>
-                <mat-panel-description>
-                  Type your name and age
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-          
-              <mat-form-field>
-                <input matInput placeholder="First name">
-              </mat-form-field>
-          
-              <mat-form-field>
-                <input matInput placeholder="Age">
-              </mat-form-field>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </div>
-        
+      <h2 class="mont" style="padding: 35px 25px 0;">News & Blog</h2>
+      <hr style="border-color: rgba(0,0,0,0.2);">
+      <div class="news" *ngFor="let post of list">
+        <mat-accordion class="accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title >{{post.title}}</mat-panel-title>
+              <div class="w3-right">
+                <mat-panel-title >{{post.date}}</mat-panel-title>
+              </div>
+            </mat-expansion-panel-header>
+            {{post.description}}
+            <app-gallery [postno]="post?.pNo"></app-gallery>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
     </div>
-
   </div>
   
 </body>

@@ -65,6 +65,9 @@ import { ForumAdminListComponent } from './forum-admin/forum-admin-list/forum-ad
 import { DropzoneDirective } from './dropzone.directive';
 import { UploadTaskComponent } from './forum-admin/upload-task/upload-task.component';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { DataTablesModule } from 'angular-datatables';
+import { GalleryComponent } from './forum/gallery/gallery.component';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -89,6 +92,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
     ForumAdminListComponent,
     DropzoneDirective,
     UploadTaskComponent,
+    GalleryComponent,
   ],
   imports: [
     CommonModule,
@@ -100,6 +104,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
     AngularFirestoreModule,
     BrowserAnimationsModule, // required animations module
     HttpClientModule,
+    DataTablesModule,
     //material modules
     MatCheckboxModule,
     MatCheckboxModule,
@@ -135,7 +140,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
     MatPaginatorModule,
     ToastrModule.forRoot(),
   ],
-  providers: [MatDatepickerModule,AngularFireStorage],
+  providers: [MatDatepickerModule,AngularFireStorage,AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
