@@ -31,7 +31,7 @@ export class StudentService {
   }
 
   getStudent(id){
-    return this.firestore.collection('students',ref=>ref.where('id','==',id)).snapshotChanges();
+    return this.firestore.collection('students',ref=>ref.where('regNumber','==',id)).snapshotChanges();
   }
   getPastStudents(){
     return this.firestore.collection('pastStudents',ref=> ref.orderBy('regNumber')).snapshotChanges();
