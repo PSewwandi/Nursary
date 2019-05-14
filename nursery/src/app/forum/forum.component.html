@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:#f5f5f5;">
   <!-- Navbar -->
 	<div class="w3-top">
 	  <div class="w3-bar w3-card w3-black" style="opacity: 0.8">
@@ -21,7 +21,7 @@
 	      <a href="/home/#vision" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">VISION</a>
 	      <a href="/home/#aboutus" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">ABOUT</a>
         <a href="/home/#staff" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">STAFF</a>
-        <a [routerLink]="'/forum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">NEWS & BLOG</a>
+        <a [routerLink]="'/forum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">GALLERY</a>
 	      <a href="/home/#contact" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">CONTACT</a>
 	      
 	      
@@ -30,10 +30,10 @@
   </div>
   <div class="w3-content" style="max-width:2000px;margin-top:46px;">
     <div class="content" style="height: auto;">
-      <h2 class="mont" style="padding: 35px 25px 0;">News & Blog</h2>
+      <h2 class="mont" style="padding: 35px 25px 0;">Gallery</h2>
       <hr style="border-color: rgba(0,0,0,0.2);">
       <div class="news" *ngFor="let post of list">
-        <mat-accordion class="accordion">
+        <mat-accordion class="accordion" >
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title >{{post.title}}</mat-panel-title>

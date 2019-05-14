@@ -1,3 +1,22 @@
-<p>
-  forum-admin-list works!
-</p>
+<table datatable class="row-border hover" [dtTrigger]="dtTrigger">
+  <thead class="thead-dark">
+    <tr>
+      <th>Post Number</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date of Publish</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of list">
+      <td>{{post.pNo}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.description}}</td>
+      <td>{{post.date}}</td>
+      <td><a class="btn text-danger" (click)="onDelete(post.id)"><i class="fa fa-trash"></i></a></td>
+      <td><a class="btn text-primary" (click)="onEdit(post)"><i class="fa fa-edit"></i></a></td>
+    </tr>
+  </tbody>
+</table>

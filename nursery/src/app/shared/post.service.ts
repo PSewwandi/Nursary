@@ -9,6 +9,6 @@ export class PostService {
   constructor(private firestore: AngularFirestore) { }
 
   getPost(){
-    return this.firestore.collection('post').snapshotChanges();
+    return this.firestore.collection('post',ref=>ref.orderBy('date','desc')).snapshotChanges();
   }
 }
