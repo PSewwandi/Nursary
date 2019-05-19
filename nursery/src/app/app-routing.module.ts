@@ -10,19 +10,27 @@ import { FeesComponent } from './students/fees/fees.component';
 import { ViewPastStudentsComponent } from './students/view-past-students/view-past-students.component';
 import { ForumComponent } from './forum/forum.component';
 import { ForumAdminComponent } from './forum-admin/forum-admin.component';
+import { NewsforumComponent} from './newsforum/newsforum.component';
+import { AdminNewsforumComponent} from './newsforum/admin-newsforum/admin-newsforum.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { ParentGuard } from './shared/guard/parent.guard';
 
 export const routes: Routes = [
   { path:'',redirectTo:'/home',pathMatch:'full'},
   { path:'home', component:HomeComponent},
-  { path:'dashboard',component: DashboardComponent},
-  { path:'students',component:StudentsComponent},
-  { path:'teachers',component:TeachersComponent},
-  { path:'attendance',component:StudentsAttendanceComponent},
-  { path:'viewAttendance',component: ViewAttendanceComponent},
-  { path:'viewFees',component:FeesComponent},
-  { path:'viewPastStudents',component:ViewPastStudentsComponent},
-  { path:'forum', component:ForumComponent},
-  { path:'forumAdmin', component:ForumAdminComponent}
+  { path:'login',component:LoginComponent},
+  { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
+  { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},
+  { path:'teachers',component:TeachersComponent,canActivate: [AuthGuard]},
+  { path:'attendance',component:StudentsAttendanceComponent,canActivate: [AuthGuard]},
+  { path:'viewAttendance',component: ViewAttendanceComponent,canActivate: [AuthGuard]},
+  { path:'viewFees',component:FeesComponent,canActivate: [AuthGuard]},
+  { path:'viewPastStudents',component:ViewPastStudentsComponent,canActivate: [AuthGuard]},
+  { path:'forum', component:ForumComponent,canActivate: [ParentGuard]},
+  { path:'forumAdmin', component:ForumAdminComponent,canActivate: [AuthGuard]},
+  { path:'newsforum', component:NewsforumComponent,canActivate: [ParentGuard]},
+  { path:'adminNews', component:AdminNewsforumComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

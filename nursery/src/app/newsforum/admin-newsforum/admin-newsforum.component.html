@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body class="w3-light-grey">
+  <app-dashboard-frame></app-dashboard-frame>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <h3 style="color:cornflowerblue">NEWS FORUM</h3>
+      <br>
+      <div class="forum-container">
+        <h5 >NEW POST</h5>
+        <form id="forumForm" [formGroup]="forumForm" (ngSubmit)="onSubmit()">
+          <div class="line-forum">
+            <mat-form-field>
+              <input formControlName="title" matInput placeholder="Title">
+              <mat-error *ngIf="forumForm.get('title').invalid">{{ getErrorMessage(forumForm.get('title')) }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field style="width: 100%">
+              <textarea formControlName="msg" matInput placeholder="write a new post"></textarea>
+              <mat-error *ngIf="forumForm.get('msg').invalid">{{ getErrorMessage(forumForm.get('msg')) }}</mat-error>
+            </mat-form-field>
+          </div>
+          <button mat-button color="primary" form="forumForm" type="submit">POST <mat-icon>send</mat-icon></button>
+          <button mat-button color="warn" (click)="clear()">CANCEL <mat-icon>cancel</mat-icon></button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+
+
+      <div class="event-container">
+        <!-- <br><br><br> -->
+        <h5>NEW EVENT</h5>
+        <form id="forum" [formGroup]="eventForm" (ngSubmit)="eventSubmit()">
+          <div class="line-event">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="date.invalid">{{ getErrorMessage(date) }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="time" matInput placeholder="Choose a time" formControlName="time">
+              <mat-error *ngIf="eventForm.get('time').invalid">{{ getErrorMessage(eventForm.get('time')) }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Add Event" formControlName="event">
+              <mat-error *ngIf="eventForm.get('event').invalid">{{ getErrorMessage(eventForm.get('event')) }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Add Place" formControlName="venue">
+              <mat-error *ngIf="eventForm.get('venue').invalid">{{ getErrorMessage(eventForm.get('venue')) }}</mat-error>
+            </mat-form-field>
+
+          </div>
+          <button mat-button color="primary" form="eventForm" type="submit">ADD <mat-icon>add_circle_outline</mat-icon>
+          </button>
+          <button mat-button color="warn" (click)="clear()">CANCEL <mat-icon>cancel</mat-icon></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <br>
+      <h5 style="display: inline-block">POSTS</h5>
+      <span style="margin: 18px">{{forumNum}} items</span>
+      <div class="msg" *ngFor="let item of view ">
+        <mat-card>
+          <div class="row">
+            <mat-card-subtitle class="forumTitle">{{item.title}}</mat-card-subtitle>
+            <button mat-button (click)="forumDelete(item)">
+              <mat-icon class="dlt">delete</mat-icon>
+            </button>
+          </div>
+          <mat-card-content>
+            {{item.msg}}
+          </mat-card-content>
+          <mat-card-footer>{{item.date | date: ' dd/MM/yyyy | hh:mm a '}}</mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <br>
+      <h5 style="display: inline-block">UP COMMING EVENTS</h5>
+      <span style="margin: 18px">{{eventNum}} items</span>
+      <div class="eve" *ngFor="let item of viewEvent">
+        <mat-card>
+          <div class="row">
+            <mat-card-subtitle class="eventTitle">{{item.event}}</mat-card-subtitle>
+            <button mat-icon-button (click)="eventDelete(item)">
+              <mat-icon class="dlt" style=" margin-bottom: 20px">delete</mat-icon>
+            </button>
+            <button mat-icon-button (click)="eventUpdate(item)">
+              <mat-icon class="dlt" style=" margin-bottom: 20px">edit</mat-icon>
+            </button>
+          </div>
+          <mat-card-content>
+            {{item.event}} will be held on <b>{{item.date | date: 'EEEE, MMMM d, y'}}</b> at <b>{{item.time}}</b> , at
+            <b>{{item.venue}}</b>.
+          </mat-card-content>
+          <mat-card-footer style="margin-left: 40%">{{item.pDate | date: ' dd/MM/yyyy | hh:mm a '}}</mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey"></footer>
+
+</body>
+
+</html>

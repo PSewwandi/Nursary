@@ -31,9 +31,11 @@
     <a [routerLink]="'/teachers'" class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="fas fa-user-tie fa-fw"></i>  Teacher Registration</a>
     <a [routerLink]="'/attendance'" class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="far fa-clipboard"></i>  Mark Attendance</a>
     <a [routerLink]="'/viewAttendance'" class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="fa fa-eye fa-fw"></i>  View Attendance</a>
-    <a [routerLink]="'/forumAdmin'"  class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="fa fa-book fa-fw"></i>  Forum</a>
+    <a [routerLink]="'/adminNews'"  class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="fa fa-book fa-fw"></i>  Forum</a>
+    <a [routerLink]="'/forumAdmin'"  class="w3-bar-item w3-button w3-padding" style="color:black;text-decoration: none;"><i class="fa fa-book fa-fw"></i>  Manage Gallery</a>
     <a [routerLink]="'/viewFees'" class="w3-bar-item w3-button w3-padding"  style="color:black;text-decoration: none;"><i class="fa fa-bank fa-fw"></i>  Fees</a>
     <a [routerLink]="'/viewPastStudents'" class="w3-bar-item w3-button w3-padding"  style="color:black;text-decoration: none;"><i class="fas fa-user-times"></i>Past Students</a>
+    <button mat-button (click) = "logout()"><mat-icon>logout</mat-icon> LOG OUT</button>
   </div>
 </nav>
 

@@ -68,6 +68,9 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { DataTablesModule } from 'angular-datatables';
 import { GalleryComponent } from './forum/gallery/gallery.component';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { LoginComponent } from './login/login.component';
+import { NewsforumComponent } from './newsforum/newsforum.component';
+import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsforum.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +96,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
     DropzoneDirective,
     UploadTaskComponent,
     GalleryComponent,
+    LoginComponent,
+    NewsforumComponent,
+    AdminNewsforumComponent,
   ],
   imports: [
     CommonModule,

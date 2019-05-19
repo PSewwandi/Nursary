@@ -1,0 +1,39 @@
+.line-forum > * {
+    width: 100%;
+}
+
+.line-event > * {
+    width: 100%;
+}
+
+html,body,h1,h2,h3,h4,h5 {
+    font-family: "Raleway", sans-serif
+}
+.event-container {
+    margin-top: 25%;
+}
+.dlt {
+    font-size: 18px;
+    /* margin-left: 80%; */
+    vertical-align: middle;
+}
+
+mat-card {
+    margin-bottom: 10px;
+    
+}
+mat-card-footer {
+    font-size: 14px;
+    margin-left: 77%;
+}
+.forumTitle {
+    font-size: 20px; 
+    width: 88%; 
+    margin-left: 15px
+}
+
+.eventTitle {
+    font-size: 20px;
+    width: 60%;
+    margin-left: 15px;
+}
