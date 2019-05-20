@@ -46,4 +46,9 @@ export class ForumService {
   forpdate(id, item) {
       this.forum.doc(id).update(item); 
   }
+
+  //get forum object
+  getForum(){
+    return this.fire.collection('Forums').snapshotChanges();
+  }
 }

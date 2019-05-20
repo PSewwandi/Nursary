@@ -12,7 +12,7 @@ import { StudentListComponent } from './students/student-list/student-list.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestoreModule,FirestoreSettingsToken } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
@@ -146,7 +146,7 @@ import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsf
     MatPaginatorModule,
     ToastrModule.forRoot(),
   ],
-  providers: [MatDatepickerModule,AngularFireStorage,AngularFireDatabase],
+  providers: [MatDatepickerModule,AngularFireStorage,AngularFireDatabase,{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

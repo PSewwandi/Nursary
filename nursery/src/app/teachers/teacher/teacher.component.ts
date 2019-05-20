@@ -70,8 +70,8 @@ export class TeacherComponent implements OnInit {
       this.total="0";
       if(this.list){
         this.totalNumberPart=parseInt(this.total);
-        for(let stdnt of this.list){
-          this.tNumberPart=parseInt(stdnt.tNumber.slice(1));
+        for(let teacher of this.list){
+          this.tNumberPart=parseInt(teacher.tNumber.slice(1));
           if(this.tNumberPart>=this.totalNumberPart){
             this.totalNumberPart=this.tNumberPart;
            }

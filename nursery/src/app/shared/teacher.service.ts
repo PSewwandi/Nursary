@@ -13,7 +13,7 @@ export class TeacherService {
   constructor(private firestore:AngularFirestore) { }
 
   getTeachers(){
-    return this.firestore.collection('teachers').snapshotChanges();
+    return this.firestore.collection('teachers',ref=> ref.orderBy('tNumber')).snapshotChanges();
   }
 
  

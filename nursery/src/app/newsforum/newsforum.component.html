@@ -30,7 +30,7 @@
       <span class="w3-bar-item w3-left"><img src="/assets/logo.jpg" class="w3-margin-left" style="width:200px"></span>
       <div class="col-md-2"></div>
       <div class="col-md-6">
-        <h3 style="color:white">WELCOME TO THUSITHA PRE SCHOOL NEWS FORUM</h3>
+        <h3 style="color:darksalmon">Welcome To Thusitha Pre School News Forum</h3>
       </div>
       <!-- <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button> -->
      
@@ -45,12 +45,12 @@
         </mat-menu>
     </div>
 
-  <div class="row" style="margin-top: 2%; ">
-    <div class="col-md-2"></div>
-    <div class="col-md-5">
+  <div class="row" style="margin-top: 2%;">
+    <div class="col-md-1"></div>
+    <div class="col-md-6" style="margin-top: 2%;background-color: gray ">
       <br>
-      <h5 style="display: inline-block">NEWS</h5>
-      <span style="margin: 18px">{{forumNum}} items</span>
+      <h5 style="display: inline-block;color:black;font-weight: bold">NEWS</h5>
+      <span style="margin: 18px;color:darkblue">{{forumNum}} News</span>
       <div class="search" >
         <mat-icon matPrefix style="font-size: 16px" >search</mat-icon>
         <mat-form-field >
@@ -71,10 +71,10 @@
       </div>
     </div>
     <div class="col-md-1"></div>
-    <div class="col-md-2">
+    <div class="col-md-3" style="margin-top: 2%;background-color: lightsalmon">
       <br>
-      <h5 style="display: inline-block">UP COMMING EVENTS</h5>
-      <span style="margin: 18px">{{eventNum}} items</span>
+      <h5 style="display: inline-block;font-weight: bold">UP COMMING EVENTS</h5>
+      <span style="margin: 18px;color:darkred">{{eventNum}} events</span>
       <div class="eve" *ngFor="let item of viewEvent">
         <mat-card>
           <div class="row">

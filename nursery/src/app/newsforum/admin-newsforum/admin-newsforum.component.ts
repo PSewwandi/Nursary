@@ -185,4 +185,8 @@ export class AdminNewsforumComponent implements OnInit {
   clear() {
     this.forumForm.reset();
   }
+  //clear the event form
+  clearEventForm(){
+    this.eventForm.reset();
+  }
 }
