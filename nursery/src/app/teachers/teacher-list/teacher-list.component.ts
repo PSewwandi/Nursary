@@ -44,19 +44,6 @@ export class TeacherListComponent implements OnInit {
         this.toastr.warning("Deleted Successfully");
     }
   }
-
-//  filterteachers(){
-// const queryObservable = this.size$.pipe(
-//   switchMap(size => 
-//     afs.collection('items', ref => ref.where('size', '==', size)).valueChanges()
-//   )
-// );
-
-// // subscribe to changes
-// queryObservable.subscribe(queriedItems => {
-//   console.log(queriedItems);  
-// });
-//  }
 }
 
 

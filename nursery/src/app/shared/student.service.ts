@@ -16,12 +16,6 @@ export class StudentService {
   getStudents(){
     return this.firestore.collection('students',ref=> ref.orderBy('regNumber')).snapshotChanges();
   }
-
-  // searchStudents(stdreg){
-  //   return this.firestore.collection('students',ref => ref.where('regNumber', '>=', stdreg)).snapshotChanges();
-    
-  // }
-
   getYear(year){
     return this.firestore.collection('students',ref=>ref.where('year','==',year)).snapshotChanges();
   }
