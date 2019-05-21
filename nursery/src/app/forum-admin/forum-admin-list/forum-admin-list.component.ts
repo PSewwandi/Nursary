@@ -27,7 +27,10 @@ export class ForumAdminListComponent implements OnInit,OnDestroy,AfterViewInit {
           ...item.payload.doc.data()
         } as Post;
       })
-      
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        dtInstance.destroy();
+        this.dtTrigger.next();     
+    })
     });
     
   }
