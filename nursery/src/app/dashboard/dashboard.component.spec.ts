@@ -30,6 +30,8 @@ import { UploadTaskComponent } from '../forum-admin/upload-task/upload-task.comp
 import { GalleryComponent } from '../forum/gallery/gallery.component';
 import { environment } from 'src/environments/environment';
 import { DataTablesModule } from 'angular-datatables';
+import { SignupComponent } from '../signup/signup.component';
+import { VerifyEmailComponent } from '../verify-email/verify-email.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -37,7 +39,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DashboardComponent,DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent],
+      declarations: [DashboardComponent,DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent],
       imports: [FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule],
       providers: [AngularFireModule,AngularFirestore,{ provide: APP_BASE_HREF, useValue : '/' }]
       

@@ -29,11 +29,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsforumComponent } from 'src/app/newsforum/newsforum.component';
 import { GalleryComponent } from 'src/app/forum/gallery/gallery.component';
 import { DataTablesModule } from 'angular-datatables';
+import { SignupComponent } from 'src/app/signup/signup.component';
+import { VerifyEmailComponent } from 'src/app/verify-email/verify-email.component';
 
 describe('AuthGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations:[HomeComponent,LoginComponent,DashboardComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,GalleryComponent,ForumAdminsComponent,ForumAdminListComponent,UploadTaskComponent],
+      declarations:[HomeComponent,LoginComponent,DashboardComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,GalleryComponent,ForumAdminsComponent,ForumAdminListComponent,UploadTaskComponent,SignupComponent,VerifyEmailComponent],
       providers: [AuthGuard,{ provide: APP_BASE_HREF, useValue : '/' }],
       imports:[FormsModule,AppRoutingModule,MatIconModule,MatDividerModule,BrowserAnimationsModule,ReactiveFormsModule,MatInputModule,MatCardModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,MatExpansionModule,DataTablesModule]
     

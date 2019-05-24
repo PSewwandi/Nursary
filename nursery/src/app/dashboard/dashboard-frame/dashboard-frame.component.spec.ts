@@ -1,3 +1,5 @@
+import { VerifyEmailComponent } from './../../verify-email/verify-email.component';
+import { SignupComponent } from './../../signup/signup.component';
 import { ForumAdminListComponent } from './../../forum-admin/forum-admin-list/forum-admin-list.component';
 import { ForumAdminsComponent } from './../../forum-admin/forum-admins/forum-admins.component';
 import { AdminNewsforumComponent } from './../../newsforum/admin-newsforum/admin-newsforum.component';
@@ -40,7 +42,7 @@ describe('DashboardFrameComponent', () => {
     TestBed.configureTestingModule({
       imports: [FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule],
       providers: [AngularFireModule,AngularFirestore,{ provide: APP_BASE_HREF, useValue : '/' }],
-      declarations: [DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,DashboardComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent]
+      declarations: [DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,DashboardComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent]
     })
     .compileComponents();
   }));
