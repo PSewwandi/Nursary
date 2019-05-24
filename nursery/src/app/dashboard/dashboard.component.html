@@ -1,179 +1,73 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-<!-- Top container -->
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><img src="/assets/logo.jpg" class="w3-margin-left" style="width:200px"></span>
-</div>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container w3-row">
-    <div class="w3-col s4">
-      <img src="/assets/dashboard/admin.png" class="w3-circle w3-margin-right" style="width:46px">
-    </div>
-    <div class="w3-col s8 w3-bar">
-        <strong><span style="color: indigo">Welcome Admin</span></strong><br>
-      <a class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Dashboard</h5>
-  </div>
-  <div class="w3-bar-block">
-      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a  class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a [routerLink]="'/students'" class="w3-bar-item w3-button w3-padding" style="color:black"><i class='fas fa-user-edit' style='font: size 20px'></i> Student Registration</a>
-    <a [routerLink]="'/teachers'" class="w3-bar-item w3-button w3-padding" style="color:black"><i class="fas fa-user-tie fa-fw"></i>  Teacher Registration</a>
-    <a [routerLink]="'/attendance'" class="w3-bar-item w3-button w3-padding" style="color:black"><i class="far fa-clipboard"></i>  Mark Attendance</a>
-    <a [routerLink]="'/viewAttendance'" class="w3-bar-item w3-button w3-padding" style="color:black"><i class="fa fa-eye fa-fw"></i>  View Attendance</a>
-    <a [routerLink]="'/adminNews'"  class="w3-bar-item w3-button w3-padding" style="color:black"><i class="fa fa-book fa-fw"></i>  Forum</a>
-    <a [routerLink]="'/forumAdmin'"  class="w3-bar-item w3-button w3-padding" style="color:black"><i class="fa fa-book fa-fw"></i>Gallery</a>
-    <a [routerLink]="'/viewFees'" class="w3-bar-item w3-button w3-padding"  style="color:black"><i class="fa fa-bank fa-fw"></i>  Fees</a>
-    <a [routerLink]="'/viewPastStudents'" class="w3-bar-item w3-button w3-padding"  style="color:black"><i class="fas fa-user-times"></i>Past Students</a>
-    <button mat-button (click) = "logout()"><mat-icon>logout</mat-icon> LOG OUT</button>
-  </div>
-</nav>
-
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b> My Dashboard</b></h5>
-  </header>
-
-  <div class="w3-row-padding w3-margin-bottom">
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>52</h3>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+  <body class="w3-light-grey">
+    <app-dashboard-frame></app-dashboard-frame>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <header class="w3-container" style="padding-top:22px">
+          <h5><b> Dashboard</b></h5>
+        </header>
+        <div class="w3-panel">
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-twothird">
+              <h5>News</h5>
+              <table class="w3-table w3-striped w3-white">
+                <tr>
+                  <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+                  <td>New record, over 90 views.</td>
+                  <td><i>10 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+                  <td>Database error.</td>
+                  <td><i>15 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+                  <td>New record, over 40 users.</td>
+                  <td><i>17 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                  <td>New comments.</td>
+                  <td><i>25 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+                  <td>New Events.</td>
+                  <td><i>28 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+                  <td>Kids Photos.</td>
+                  <td><i>35 mins</i></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+                  <td>New shares.</td>
+                  <td><i>39 mins</i></td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
-        <div class="w3-clear"></div>
-        <h4>Forum Posts</h4>
       </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>99</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Staff</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>23</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Shares</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>50</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Students</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-panel">
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-twothird">
-        <h5>Feeds</h5>
-        <table class="w3-table w3-striped w3-white">
-          <tr>
-            <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-            <td>New record, over 90 views.</td>
-            <td><i>10 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Database error.</td>
-            <td><i>15 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-            <td>New record, over 40 users.</td>
-            <td><i>17 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-            <td>New comments.</td>
-            <td><i>25 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-            <td>Check transactions.</td>
-            <td><i>28 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-            <td>CPU overload.</td>
-            <td><i>35 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-            <td>New shares.</td>
-            <td><i>39 mins</i></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>General Stats</h5>
-    <p>New Visitors</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
-    </div>
-
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
-  </div>
-  <hr>
-  <br>
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-
-    </footer>
-
-  <!-- End page content -->
-</div>
-</body>
+      <hr>
+    
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-16 w3-light-grey">
+    
+        </footer>
+  </div> 
+  </body>
 </html>
+

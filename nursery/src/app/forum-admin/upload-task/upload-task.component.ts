@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
+
 @Component({
   selector: 'upload-task',
   templateUrl: './upload-task.component.html',
@@ -23,9 +24,11 @@ export class UploadTaskComponent implements OnInit {
   }
 
   startUpload() {
-
+ 
     // The storage path
+    if(this.file){
     const path = `test/${Date.now()}_${this.file.name}`;
+    
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);
@@ -46,10 +49,12 @@ export class UploadTaskComponent implements OnInit {
       }),
     );
   }
+}
 
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
   }
+
   
 
 }
