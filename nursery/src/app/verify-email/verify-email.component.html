@@ -1,0 +1,44 @@
+<div style="background-image: url(assets/dashboard/login.jpg); height: 915px; width: 100%;">
+  <div class="bdy">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <mat-card>
+        <ng-container>
+          <div class="title">
+            <mat-card-title style="display: inline-block;"> Thank You for Registering</mat-card-title>
+          </div>
+        </ng-container>
+
+        <mat-divider style=" color: black;"></mat-divider>
+        <br>
+        <mat-card-content>
+          <form id="login" [formGroup]= "emailVerifyForm"  *ngIf="authService.userData as user">
+              <ng-container>
+                  <div>
+                    <span>We have sent a confirmation email to <strong>{{user.email}}</strong></span>
+                  </div>
+              </ng-container>
+              <ng-container>
+                  <div>
+                    <span>Please check your email and click on the link to verfiy your email address.</span>
+                  </div>
+              </ng-container>
+            <ng-container style=" text-align: center">
+                <button  mat-button type="submit" (click)="authService.SendVerificationMail()">
+                    <i class="fas fa-redo-alt"></i>
+                    Resend Verification Email
+                </button>
+            </ng-container>
+          </form>
+          <ng-container style=" text-align: center">
+              <div class="redirectToLogin">
+                  <span>Go back To? <span class="redirect" (click)="Login()">Log In</span></span>
+              </div>
+          </ng-container>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

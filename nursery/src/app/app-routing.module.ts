@@ -15,11 +15,15 @@ import { AdminNewsforumComponent} from './newsforum/admin-newsforum/admin-newsfo
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { ParentGuard } from './shared/guard/parent.guard';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'/home',pathMatch:'full'},
   { path:'home', component:HomeComponent},
   { path:'login',component:LoginComponent},
+  { path:'signup',component:SignupComponent},
+  { path:'verifyEmail',component:VerifyEmailComponent},
   { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},
   { path:'teachers',component:TeachersComponent,canActivate: [AuthGuard]},

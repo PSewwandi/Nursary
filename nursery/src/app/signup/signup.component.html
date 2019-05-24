@@ -1,0 +1,39 @@
+<div style="background-image: url(assets/dashboard/login.jpg); height: 915px; width: 100%;">
+  <div class="bdy">
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <mat-card>
+        <ng-container>
+          <div class="title">
+            <mat-icon>person</mat-icon>
+            <mat-card-title style="display: inline-block;"> SIGN UP</mat-card-title>
+          </div>
+        </ng-container>
+        <mat-divider style=" color: black;"></mat-divider>
+        <br>
+        <mat-card-content>
+          <form id="signup" class="formGroup">
+              <div class="formGroup">
+                  <i class="fa fa-envelope fa-1.5x"></i>
+                  <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+                  </div>
+                  <div class="formGroup">
+                      <i class="fa fa-key fa-1.5x"></i>
+                  <input type="password" class="formControl" placeholder="Password" #userPwd required>
+                  </div>
+                  <div class="formGroup">
+                  <button  (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
+                  </div>
+          </form>
+          <ng-container style=" text-align: center">
+              <div class="redirectToLogin">
+                  <span>Already have an account? <span class="redirect" (click)="Login()">Log In</span></span>
+              </div>
+          </ng-container>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

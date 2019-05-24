@@ -71,6 +71,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { LoginComponent } from './login/login.component';
 import { NewsforumComponent } from './newsforum/newsforum.component';
 import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsforum.component';
+import { AuthService } from './shared/auth.service';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -97,8 +101,10 @@ import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsf
     UploadTaskComponent,
     GalleryComponent,
     LoginComponent,
+    SignupComponent,
     NewsforumComponent,
     AdminNewsforumComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     CommonModule,
@@ -108,6 +114,7 @@ import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsf
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule, // required animations module
     HttpClientModule,
     DataTablesModule,
@@ -146,7 +153,7 @@ import { AdminNewsforumComponent } from './newsforum/admin-newsforum/admin-newsf
     MatPaginatorModule,
     ToastrModule.forRoot(),
   ],
-  providers: [MatDatepickerModule,AngularFireStorage,AngularFireDatabase,{ provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [MatDatepickerModule,AngularFireStorage,AngularFireDatabase,{ provide: FirestoreSettingsToken, useValue: {} },AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
