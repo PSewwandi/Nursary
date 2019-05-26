@@ -17,12 +17,14 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { ParentGuard } from './shared/guard/parent.guard';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'/home',pathMatch:'full'},
   { path:'home', component:HomeComponent},
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent},
+  { path:'chat',component:ChatComponent},
   { path:'verifyEmail',component:VerifyEmailComponent},
   { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},

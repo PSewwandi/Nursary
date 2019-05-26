@@ -75,6 +75,7 @@ import { AuthService } from './shared/auth.service';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     ViewPastStudentsComponent,
     DashboardFrameComponent,
     DashboardComponent,
+    ChatComponent,
     ForumComponent,
     ForumAdminComponent,
     ForumAdminsComponent,
