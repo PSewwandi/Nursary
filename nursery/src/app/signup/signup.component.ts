@@ -27,4 +27,7 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  Cancel(){
+    this.router.navigate(['']);
+  }
 }

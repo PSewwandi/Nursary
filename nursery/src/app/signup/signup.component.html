@@ -1,39 +1,43 @@
-<div style="background-image: url(assets/dashboard/login.jpg); height: 915px; width: 100%;">
-  <div class="bdy">
-    <div class="col-md-6"></div>
-    <div class="col-md-3">
-      <mat-card>
-        <ng-container>
-          <div class="title">
-            <mat-icon>person</mat-icon>
-            <mat-card-title style="display: inline-block;"> SIGN UP</mat-card-title>
-          </div>
-        </ng-container>
-        <mat-divider style=" color: black;"></mat-divider>
-        <br>
-        <mat-card-content>
-          <form id="signup" class="formGroup">
-              <div class="formGroup">
-                  <i class="fa fa-envelope fa-1.5x"></i>
-                  <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-                  </div>
-                  <div class="formGroup">
-                      <i class="fa fa-key fa-1.5x"></i>
-                  <input type="password" class="formControl" placeholder="Password" #userPwd required>
-                  </div>
-                  <div class="formGroup">
-                  <button  (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
-                  </div>
-          </form>
-          <ng-container style=" text-align: center">
-              <div class="redirectToLogin">
-                  <span>Already have an account? <span class="redirect" (click)="Login()">Log In</span></span>
-              </div>
-          </ng-container>
-        </mat-card-content>
-        <mat-card-footer>
-        </mat-card-footer>
-      </mat-card>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title"><mat-icon>person</mat-icon>Sign Up here</h2>
+                    <form id="signup" class="formGroup">
+                          <div class="container">
+                              <div class="formGroup">
+                                  <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+                                  </div>
+                                  <div class="formGroup">
+                                  <input type="password" class="formControl" placeholder="Password" #userPwd required>
+                                  </div>
+                            <label>
+                              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                            </label>
+                      
+                            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                      <div class="p-t-10">
+                            <div class="formGroup">
+                                <button class="btn btn--pill btn--green" (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
+                                <button class="btn btn--pill btn--red" (click)="Cancel()">Cancel</button>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="login">
+                          <span>Already have an account? <span class="redirect" (click)="Login()">Log In</span></span>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+</body>
+
+</html>
+<!-- end document-->
