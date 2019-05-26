@@ -13,6 +13,6 @@ export class MessagesService {
   ) { }
 
   getMessages(){
-    return this.firestore.collection('messages').snapshotChanges();
+    return this.firestore.collection('messages',ref=> ref.orderBy('timeSent')).snapshotChanges();
   }
 }

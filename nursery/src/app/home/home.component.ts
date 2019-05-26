@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   itemName = '';
   itemEmail = '';
   itemMessage = '';
+  timeSent = Date;
   items: Observable<any[]>;
   contactForm: FormGroup;
   
@@ -34,8 +35,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit()  {
+    const timeStamp = this.getTimeStamp();
     this.db.collection('/messages').add({ name: this.itemName, email: this.itemEmail, 
-      message: this.itemMessage});
+      message: this.itemMessage,timeSent:timeStamp});
 //Popup message
     alert('Thank you for contacting us, your message has gone through!')
    }
@@ -43,6 +45,15 @@ export class HomeComponent implements OnInit {
     // Clearing the form after submit
   clearForm() {
     this.contactForm.reset();
+  }
+  getTimeStamp(){
+    const now = new Date();
+    const date = now.getUTCFullYear() + '/' +
+                  (now.getUTCMonth() + 1) + '/' +
+                  now.getUTCDate();
+    const time = now.getHours() + ':' +
+                  now.getMinutes() 
+    return (date + ' ' +time);
   }
   Login() {
     this.router.navigate(['login']);

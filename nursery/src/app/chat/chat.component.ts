@@ -29,6 +29,7 @@ export class ChatComponent implements OnInit {
           name: e.payload.doc.data()['name'],
           email : e.payload.doc.data()['email'],
           message : e.payload.doc.data()['message'],
+          timeSent : e.payload.doc.data()['timeSent'],
         };
       })
       console.log(this.list);
