@@ -31,11 +31,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataTablesModule } from 'angular-datatables';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { VerifyEmailComponent } from 'src/app/verify-email/verify-email.component';
+import { ChatComponent } from 'src/app/chat/chat.component';
 
 describe('ParentGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations:[HomeComponent,LoginComponent,DashboardComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,GalleryComponent,ForumAdminsComponent,ForumAdminListComponent,UploadTaskComponent,SignupComponent,VerifyEmailComponent],
+      declarations:[ChatComponent,HomeComponent,LoginComponent,DashboardComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,GalleryComponent,ForumAdminsComponent,ForumAdminListComponent,UploadTaskComponent,SignupComponent,VerifyEmailComponent],
       providers: [ParentGuard,{ provide: APP_BASE_HREF, useValue : '/' }],
       imports:[FormsModule,AppRoutingModule,MatIconModule,MatDividerModule,BrowserAnimationsModule,ReactiveFormsModule,MatInputModule,MatCardModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,MatExpansionModule,DataTablesModule]
     

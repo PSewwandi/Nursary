@@ -232,7 +232,7 @@ h2 {
   overflow: hidden;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 1px;
   background: #fff;
 }
 
@@ -241,21 +241,21 @@ h2 {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 8px 20px 50px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 50px rgba(0, 0, 0, 0.15);
   width: 100%;
   display: table;
 }
 
 .card-3 .card-heading {
-  background: url("/assets/bg-heading-03.jpg") top left/cover no-repeat;
+  background: url("/assets/signup.jpg") top left/cover no-repeat;
   display: table-cell;
-  width: 50%;
+  width: 100%;
 }
 
 .card-3 .card-body {
-  padding: 57px 65px;
+  padding: 65px 63px;
   padding-bottom: 65px;
   display: table-cell;
 }

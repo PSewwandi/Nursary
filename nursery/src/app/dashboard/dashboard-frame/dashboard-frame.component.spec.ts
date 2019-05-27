@@ -32,6 +32,7 @@ import { NewsforumComponent } from 'src/app/newsforum/newsforum.component';
 import { UploadTaskComponent } from 'src/app/forum-admin/upload-task/upload-task.component';
 import { DataTablesModule } from 'angular-datatables';
 import { GalleryComponent } from 'src/app/forum/gallery/gallery.component';
+import { ChatComponent } from 'src/app/chat/chat.component';
 
 
 describe('DashboardFrameComponent', () => {
@@ -42,7 +43,7 @@ describe('DashboardFrameComponent', () => {
     TestBed.configureTestingModule({
       imports: [FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule],
       providers: [AngularFireModule,AngularFirestore,{ provide: APP_BASE_HREF, useValue : '/' }],
-      declarations: [DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,DashboardComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent]
+      declarations: [ChatComponent,DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,DashboardComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent]
     })
     .compileComponents();
   }));
