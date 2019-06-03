@@ -36,6 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { VerifyEmailComponent } from 'src/app/verify-email/verify-email.component';
 import { ChatComponent } from 'src/app/chat/chat.component';
+import * as $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-bs4';
 
 
 

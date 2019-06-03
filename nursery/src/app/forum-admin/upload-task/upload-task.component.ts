@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 
+
 @Component({
   selector: 'upload-task',
   templateUrl: './upload-task.component.html',
