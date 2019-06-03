@@ -20,6 +20,8 @@ export class ForumAdminListComponent implements OnInit,OnDestroy,AfterViewInit {
   constructor(private service: PostService,private firestore: AngularFirestore,private toastr:ToastrService) { }
 
   ngOnInit():void {
+    
+
     this.service.getPost().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {
