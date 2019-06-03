@@ -3,7 +3,6 @@ import { DataTableDirective } from 'angular-datatables';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ForumAdminListComponent } from './forum-admin-list.component';
 //import { BehaviorSubject } from 'rxjs';
-import { AngularFireStorage} from '@angular/fire/storage';
 import { ToastrService } from 'ngx-toastr';
 import { PostService } from 'src/app/shared/post.service';
 
