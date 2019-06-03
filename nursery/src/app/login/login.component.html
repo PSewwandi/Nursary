@@ -18,8 +18,9 @@
             <ng-container>
               <mat-icon>person</mat-icon>
               <mat-form-field>
-                <input matInput placeholder="Your Name" formControlName = "uName">
+                <input matInput placeholder="Your Email" formControlName = "uName" type="email">
                 <mat-error *ngIf="loginForm.get('uName').invalid">{{ getErrorMessage(loginForm.get('uName')) }}</mat-error>
+                <mat-error *ngIf="loginForm.get('uName').invalid">{{ getErrorMessageEmail(loginForm.get('uName')) }}</mat-error>
               </mat-form-field>
             </ng-container>
 

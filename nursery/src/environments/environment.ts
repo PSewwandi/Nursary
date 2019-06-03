@@ -12,6 +12,10 @@ export const environment = {
     projectId: "nursary-681ba",
     storageBucket: "nursary-681ba.appspot.com",
     messagingSenderId: "796005598353"
+  },
+  adminConfig : {
+    uName: "thusitha@gmail.com",
+    pwd: "admin@123"
   }
 };
 
