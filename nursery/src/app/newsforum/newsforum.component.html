@@ -6,45 +6,39 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body class="w3-light-grey">
-  <!-- <div class="row" style="padding: 10px 0 10px 0; background:#3f51b5">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <h3 style="color:white">WELCOME TO THUSITHA PRE SCHOOL NEWS FORUM</h3>
-    </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-1">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon  >account_circle</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="logout()">
-          <span> LOG OUT </span>
-          <mat-icon>logout</mat-icon>
-        </button>
-      </mat-menu>
-    </div>
-  </div> -->
-
-  <div class="w3-bar w3-top w3-black w3-large" style="z-index:4" >
-      <span class="w3-bar-item w3-left"><img src="/assets/logo.jpg" class="w3-margin-left" style="width:200px"></span>
-      <div class="col-md-2"></div>
-      <div class="col-md-6">
-        <h3 style="color:darksalmon">Welcome To Thusitha Pre School News Forum</h3>
-      </div>
-      <!-- <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button> -->
-     
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="w3-bar-item w3-right">
-          <mat-icon  >account_circle</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="logout()">
-            <span> LOG OUT </span>
-            <mat-icon>logout</mat-icon>
+<body class="w3-light-grey content">
+      <!-- Navbar -->
+  <div class="row">
+    <div class="w3-top">
+      <div class="w3-bar w3-card w3-black" style="opacity: 0.8">
+        <img class="" src="/assets/logo.jpg" style="width:200px;height: 46px;">
+        <div class="w3-right mont">
+          <a href="#" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">HOME</a>
+          <a href="/home/#vision" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">VISION</a>
+          <a href="/home/#aboutus" class="w3-bar-item w3-button w3-hover-light-blue " style="padding: 13px 16px;text-decoration:none;">ABOUT</a>
+          <a href="/home/#staff" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">STAFF</a>
+          <a [routerLink]="'/newsforum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">NEWS & BLOG</a>
+          <a [routerLink]="'/forum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">GALLERY</a>
+          <a href="/home/#contact" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">CONTACT</a>
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="w3-bar-item w3-right">
+            <mat-icon  >account_circle</mat-icon>
           </button>
-        </mat-menu>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">
+              <span> LOG OUT </span>
+              <mat-icon>logout</mat-icon>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
     </div>
-
+  </div>
+  <div class="row" style="margin-top: 6%;" >
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+      <h3 style="color:darksalmon">Welcome To Thusitha Pre School News Forum</h3>
+    </div>
+  </div>
   <div class="row" style="margin-top: 2%;">
     <div class="col-md-1"></div>
     <div class="col-md-6" style="margin-top: 2%;background-color: gray ">
