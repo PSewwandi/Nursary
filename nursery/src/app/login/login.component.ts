@@ -17,8 +17,6 @@ export class LoginComponent implements OnInit {
   show = true;
   loading = false;
   submitted = false;
-  adminUrl: string;
-  parentUrl: string;
   error = '';
 
   constructor(private auth: AuthenticationService,
@@ -28,8 +26,9 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    if (this.auth.isAuthenticated()) { this.router.navigate(['dashboard']); }
     this.loginForm = this.fb.group({
-      uName: ['', Validators.required],
+      uName: ['', [Validators.required, Validators.email]],
       pwd: ['', Validators.required]
     });
 
@@ -37,9 +36,6 @@ export class LoginComponent implements OnInit {
     this.auth.logoutAdmin();
     this.auth.logoutParent();
 
-    // get return url from route parameters or default to '/'
-    this.adminUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
-    this.parentUrl = this.route.snapshot.queryParams['returnUrl'] || 'forum';
   }
 
   get f() { return this.loginForm.controls }
@@ -50,27 +46,22 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    if (this.f.uName.value == "thusitha" && this.f.pwd.value == "admin") {
-      this.auth.loginAdmin(true);
-      setTimeout(() => {
-        this.router.navigate([this.adminUrl]);
-      }, 500);
-      
-    } else if (this.f.uName.value == "thusitha" && this.f.pwd.value == "parent") {
-      this.auth.loginParent(true);
-      setTimeout(() => {
-        this.router.navigate([this.parentUrl]);
-      }, 500);
-    } else {
-      this.loading = false;
-    }
+    this.auth.login(this.f.uName.value, this.f.pwd.value);
+    setTimeout(() => { this.loading = false }, 2500);
   }
 
 
   getErrorMessage(fControl: FormControl) {
     // return fControl.hasError('required') ? 'This field is required' : '';
-    if (fControl.invalid) {
+    if (fControl.errors.required) {
       return 'This field is required';
+    }
+  }
+  getErrorMessageEmail(fControl: FormControl) {
+    // return fControl.hasError('required') ? 'This field is required' : '';
+    if (fControl.errors.email) {
+
+      return 'Enter a Valid Email';
     }
   }
 }

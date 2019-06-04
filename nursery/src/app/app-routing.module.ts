@@ -24,7 +24,7 @@ export const routes: Routes = [
   { path:'home', component:HomeComponent},
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent},
-  { path:'chat',component:ChatComponent},
+  { path:'chat',component:ChatComponent, canActivate: [AuthGuard]},
   { path:'verifyEmail',component:VerifyEmailComponent},
   { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},
