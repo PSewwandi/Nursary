@@ -18,6 +18,7 @@ import { ParentGuard } from './shared/guard/parent.guard';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ChatComponent } from './chat/chat.component';
+import { ReplyComponent } from './chat/reply/reply.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'/home',pathMatch:'full'},
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent},
   { path:'chat',component:ChatComponent, canActivate: [AuthGuard]},
+  { path:'reply',component:ReplyComponent, canActivate: [AuthGuard]},
   { path:'verifyEmail',component:VerifyEmailComponent},
   { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},
