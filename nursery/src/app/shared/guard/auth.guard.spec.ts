@@ -32,13 +32,19 @@ import { DataTablesModule } from 'angular-datatables';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { VerifyEmailComponent } from 'src/app/verify-email/verify-email.component';
 import { ChatComponent } from 'src/app/chat/chat.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../auth.service';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 describe('AuthGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations:[HomeComponent,ChatComponent,LoginComponent,DashboardComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,GalleryComponent,ForumAdminsComponent,ForumAdminListComponent,UploadTaskComponent,SignupComponent,VerifyEmailComponent],
-      providers: [AuthGuard,{ provide: APP_BASE_HREF, useValue : '/' }],
-      imports:[FormsModule,AppRoutingModule,MatIconModule,MatDividerModule,BrowserAnimationsModule,ReactiveFormsModule,MatInputModule,MatCardModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,MatExpansionModule,DataTablesModule]
+      providers: [AuthGuard,{ provide: APP_BASE_HREF, useValue : '/' },AuthService,AngularFireModule,AngularFirestore,AngularFireStorage],
+      imports:[AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule,FormsModule,AppRoutingModule,MatIconModule,MatDividerModule,BrowserAnimationsModule,ReactiveFormsModule,MatInputModule,MatCardModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,MatExpansionModule,DataTablesModule]
     
     });
   });

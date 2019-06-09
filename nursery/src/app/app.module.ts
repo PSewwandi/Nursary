@@ -76,6 +76,8 @@ import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ChatComponent } from './chat/chat.component';
+import { ReplyComponent } from './chat/reply/reply.component';
+import { ComposeComponent } from './chat/compose/compose.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +109,8 @@ import { ChatComponent } from './chat/chat.component';
     NewsforumComponent,
     AdminNewsforumComponent,
     VerifyEmailComponent,
+    ReplyComponent,
+    ComposeComponent,
   ],
   imports: [
     CommonModule,

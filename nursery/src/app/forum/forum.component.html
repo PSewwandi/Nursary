@@ -23,7 +23,16 @@
         <a href="/home/#staff" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">STAFF</a>
         <a [routerLink]="'/newsforum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">NEWS & BLOG</a>
         <a [routerLink]="'/forum'" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">GALLERY</a>
-	      <a href="/home/#contact" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">CONTACT</a>
+        <a href="/home/#contact" class="w3-bar-item w3-button w3-hover-light-blue" style="padding: 13px 16px;text-decoration:none;">CONTACT</a>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="w3-bar-item w3-right">
+          <mat-icon  >account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <span> LOG OUT </span>
+            <mat-icon>logout</mat-icon>
+          </button>
+        </mat-menu>
 	      
 	      
 	    </div>

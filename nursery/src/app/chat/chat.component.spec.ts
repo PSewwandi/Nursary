@@ -33,7 +33,14 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { APP_BASE_HREF } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+<<<<<<< HEAD
 import { DataTableDirective, DataTablesModule } from 'angular-datatables';
+=======
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ReplyComponent } from './reply/reply.component';
+import { ComposeComponent } from './compose/compose.component';
+>>>>>>> 7fd27a0d1d463fcdeb0abcb1a8a750bd5d6120c4
 
 describe('ChatComponent', () => {
   let component: ChatComponent;
@@ -41,8 +48,13 @@ describe('ChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+<<<<<<< HEAD
       declarations: [ChatComponent,DashboardComponent,DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent],
       imports: [DataTablesModule,FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule,ToastrModule.forRoot()],
+=======
+      declarations: [ChatComponent,DashboardComponent,DashboardFrameComponent,ForumAdminComponent,NewsforumComponent,AdminNewsforumComponent,ForumAdminsComponent,ForumAdminListComponent,HomeComponent,LoginComponent,StudentComponent,StudentsComponent,TeachersComponent,StudentsAttendanceComponent,ViewAttendanceComponent,FeesComponent,ViewPastStudentsComponent,ForumComponent,DashboardFrameComponent,StudentListComponent,TeacherComponent,TeacherListComponent,UploadTaskComponent,GalleryComponent,SignupComponent,VerifyEmailComponent,ReplyComponent,ComposeComponent],
+      imports: [FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule,ToastrModule.forRoot(),AngularFireAuthModule],
+>>>>>>> 7fd27a0d1d463fcdeb0abcb1a8a750bd5d6120c4
       providers: [AngularFireModule,AngularFirestore,{ provide: APP_BASE_HREF, useValue : '/' }]
       
     })

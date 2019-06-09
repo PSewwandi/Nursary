@@ -1,36 +1,31 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Message } from '../shared/messages';
-import { MessagesService } from '../shared/messages.service';
+import { MessagesService } from 'src/app/shared/messages.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ToastrService } from 'ngx-toastr';
-<<<<<<< HEAD
-import { DataTableDirective, DataTablesModule } from 'angular-datatables';
-=======
+import { Message } from 'src/app/shared/messages';
 import { Router } from '@angular/router';
->>>>>>> 7fd27a0d1d463fcdeb0abcb1a8a750bd5d6120c4
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  selector: 'app-reply',
+  templateUrl: './reply.component.html',
+  styleUrls: ['./reply.component.css']
 })
-export class ChatComponent implements OnInit {
+export class ReplyComponent implements OnInit {
 
   list: Message[];
   
   constructor(private service:MessagesService,
+    private router:Router,
     private firestore:AngularFirestore,
     private toastr:ToastrService,
-    private router:Router
     ) {
      }
 
   ngOnInit() {
 
-    this.service.getMessages().subscribe(actionArray=>{
-      
-      this.list = actionArray.map(e => {
-        return {
+    this.service.getResponses().subscribe(actionArray=>{
+      this.list = actionArray.map(e =>{
+        return{
           id: e.payload.doc.id,
           name: e.payload.doc.data()['name'],
           email : e.payload.doc.data()['email'],
@@ -44,12 +39,9 @@ export class ChatComponent implements OnInit {
   onDelete(id: string){
     if(confirm("Are you sure to delete this record")){
 
-      this.firestore.doc("messages/"+ id).delete();
+      this.firestore.doc("reply/"+ id).delete();
      this.toastr.warning("Deleted Successfully");
     }
-  } 
-  openDialog(){
-    this.router.navigate(['reply']);
   }
 
 }
