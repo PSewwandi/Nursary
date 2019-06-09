@@ -38,20 +38,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { APP_BASE_HREF } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 
 
 describe('ForumAdminListComponent', () => {
   let component: ForumAdminListComponent;
   let fixture: ComponentFixture<ForumAdminListComponent>;
   
-  /*const FirestoreStub = {
+  
+  const FirestoreStub = {
     collection: (name: string) => ({
       doc: (_id: string) => ({
         valueChanges: () => new BehaviorSubject({ foo: 'bar' }),
         set: (_d: any) => new Promise((resolve, _reject) => resolve()),
       }),
     }),
-  };*/
+  };
   
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -59,8 +61,7 @@ describe('ForumAdminListComponent', () => {
       imports: [FormsModule,AppRoutingModule,MatIconModule,ReactiveFormsModule,MatCardModule,MatDividerModule,MatInputModule,MatFormFieldModule,MatRadioModule,MatProgressSpinnerModule,MatSelectModule,MatDatepickerModule,MatMenuModule,AngularFireModule.initializeApp(environment.firebaseConfig),DataTablesModule,MatExpansionModule,ToastrModule.forRoot(),MatNativeDateModule,BrowserAnimationsModule,HttpClientModule],
       providers: [AngularFireModule,AngularFirestore,AngularFireStorage,MatDatepickerModule,{ provide: APP_BASE_HREF, useValue : '/' }]
    
-    })
-    .compileComponents();
+  }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -3,6 +3,7 @@ import { Message } from '../shared/messages';
 import { MessagesService } from '../shared/messages.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ToastrService } from 'ngx-toastr';
+import { DataTableDirective, DataTablesModule } from 'angular-datatables';
 
 @Component({
   selector: 'app-chat',
