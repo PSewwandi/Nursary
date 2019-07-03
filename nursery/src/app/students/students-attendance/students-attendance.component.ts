@@ -41,16 +41,16 @@ export class StudentsAttendanceComponent implements OnInit {
     this.table2Data=new Attendance;
     this.service.getYear('1').subscribe(actionArray=>{
       this.year1=actionArray.map(item=>{
-        return{
+        return {
           id:item.payload.doc.id,
           ...item.payload.doc.data()
-              } as Student;
+        } as Student;
       })
     });
 
     this.service.getYear('2').subscribe(actionArray=>{
       this.year2=actionArray.map(item=>{
-        return{
+        return {
           id:item.payload.doc.id,
           ...item.payload.doc.data()
         } as Student;
@@ -66,13 +66,14 @@ export class StudentsAttendanceComponent implements OnInit {
     this.n1++;
     this.attendance1=this.attendance1.set(regNumber,val);
     
-    if(this.attendance1.has(regNumber)){
+    if (this.attendance1.has(regNumber)) {
       this.attendance1.delete(regNumber);
       this.attendance1.set(regNumber,val);
-    }else{
+    } else {
       this.attendance1.set(regNumber,val);
-      }
+    }
   }
+  
   onSubmitAttendanceYear2(regNumber:string,val:string){   
     this.year2size=this.year2.length;
     this.n2++;
@@ -85,7 +86,8 @@ export class StudentsAttendanceComponent implements OnInit {
       this.attendance2.set(regNumber,val);
       }
   }
-  onSubmit1(){
+
+  onSubmit1() {
     var today=new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -117,15 +119,11 @@ export class StudentsAttendanceComponent implements OnInit {
       Object.assign(obj, { [key]: value }) 
     ), {});
 
-     this.table2Data.attendance = obj;
-     this.table2Data.date=date;
-     let data= Object.assign({},this.table2Data);
-     this.firestore.collection('attendance').add(data);
-     this.toastr.success("Submitted Successfully!!!");
-     this.n2++;
+    this.table2Data.attendance = obj;
+    this.table2Data.date=date;
+    let data= Object.assign({},this.table2Data);
+    this.firestore.collection('attendance').add(data);
+    this.toastr.success("Submitted Successfully!!!");
+    this.n2++;
   }
-  
- 
-  
-
 }

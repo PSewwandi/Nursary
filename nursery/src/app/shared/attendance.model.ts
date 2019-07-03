@@ -1,5 +1,8 @@
 export class Attendance {
-    date:string;
+    date:string; // this is the old way
+    year: number;
+    month: number;
+    day:number;
     attendance:{};
 
 }

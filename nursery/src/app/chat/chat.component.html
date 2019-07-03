@@ -11,12 +11,7 @@
   <body class="w3-light-grey">
     <app-dashboard-frame></app-dashboard-frame>
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3"> <a class="btn text-success pull-right"style="font-size: 20px" (click)="Bin()"><i class="fa fa-trash"></i></a></div>
-    </div>
-    <div class="row">
-        <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
       <div class="col-md-9">
           <h3 style="color:deeppink">Contact us Messages</h3>
           <br>
@@ -35,10 +30,7 @@
                 <td>{{msg.name}}</td>
                 <td>{{msg.email}}</td>
                 <td>{{msg.message}}</td>
-                <td>
-                  <a class="btn text-success"  (click)="openDialog()"><i class="fa fa-reply"></i></a>
-                  <a class="btn text-danger" (click)="onDelete(msg.id)"><i class="fa fa-trash"></i></a>
-                </td>
+                <td><a class="btn text-danger" (click)="onDelete(msg.id)"><i class="fa fa-trash"></i></a></td>
               </tr>
             </tbody>
           

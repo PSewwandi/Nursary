@@ -76,8 +76,9 @@ import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ChatComponent } from './chat/chat.component';
-import { ReplyComponent } from './chat/reply/reply.component';
-import { ComposeComponent } from './chat/compose/compose.component';
+import { TeacherattendenceComponent } from './teachers/teacherattendence/teacherattendence.component';
+import { ViewTeacherAttendanceComponent } from './teachers/view-teacher-attendance/view-teacher-attendance.component';
+import { SalaryCalculationComponent } from './salary-calculation/salary-calculation.component';
 
 @NgModule({
   declarations: [
@@ -109,8 +110,9 @@ import { ComposeComponent } from './chat/compose/compose.component';
     NewsforumComponent,
     AdminNewsforumComponent,
     VerifyEmailComponent,
-    ReplyComponent,
-    ComposeComponent,
+    TeacherattendenceComponent,
+    ViewTeacherAttendanceComponent,
+    SalaryCalculationComponent,
   ],
   imports: [
     CommonModule,
