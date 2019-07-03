@@ -15,7 +15,4 @@ export class MessagesService {
   getMessages(){
     return this.firestore.collection('messages',ref=> ref.orderBy('timeSent')).snapshotChanges();
   }
-  getResponses(){
-    return this.firestore.collection('reply',ref=> ref.orderBy('timeSent')).snapshotChanges();
-  }
 }

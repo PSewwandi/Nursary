@@ -18,7 +18,9 @@ import { ParentGuard } from './shared/guard/parent.guard';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ChatComponent } from './chat/chat.component';
-import { ReplyComponent } from './chat/reply/reply.component';
+import { TeacherattendenceComponent } from './teachers/teacherattendence/teacherattendence.component';
+import { ViewTeacherAttendanceComponent } from './teachers/view-teacher-attendance/view-teacher-attendance.component';
+import { SalaryCalculationComponent } from './salary-calculation/salary-calculation.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'/home',pathMatch:'full'},
@@ -26,7 +28,6 @@ export const routes: Routes = [
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent},
   { path:'chat',component:ChatComponent, canActivate: [AuthGuard]},
-  { path:'reply',component:ReplyComponent, canActivate: [AuthGuard]},
   { path:'verifyEmail',component:VerifyEmailComponent},
   { path:'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   { path:'students',component:StudentsComponent,canActivate: [AuthGuard]},
@@ -39,6 +40,10 @@ export const routes: Routes = [
   { path:'forumAdmin', component:ForumAdminComponent,canActivate: [AuthGuard]},
   { path:'newsforum', component:NewsforumComponent,canActivate: [ParentGuard]},
   { path:'adminNews', component:AdminNewsforumComponent, canActivate: [AuthGuard]},
+  { path:'teacherattendance', component:TeacherattendenceComponent, canActivate: [AuthGuard]},
+  { path:'viewteacherattendance', component:ViewTeacherAttendanceComponent, canActivate: [AuthGuard]},
+  { path:'salaryCalculation', component:SalaryCalculationComponent }
+  
 ];
 
 @NgModule({

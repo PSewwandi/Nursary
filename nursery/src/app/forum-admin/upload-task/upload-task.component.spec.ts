@@ -26,7 +26,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatIconModule, MatCardModule, MatDividerModule, MatInputModule, MatFormFieldModule, MatRadioModule, MatProgressSpinnerModule, MatSelectModule, MatDatepickerModule, MatMenuModule, MatExpansionModule, MatNativeDateModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment';
-import { DataTablesModule, DataTableDirective } from 'angular-datatables';
+import { DataTablesModule } from 'angular-datatables';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestore, FirestoreSettingsToken } from 'angularfire2/firestore';
@@ -36,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { VerifyEmailComponent } from 'src/app/verify-email/verify-email.component';
 import { ChatComponent } from 'src/app/chat/chat.component';
-
+import * as $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-bs4';
 
 
 

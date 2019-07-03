@@ -1,13 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Message } from '../shared/messages';
 import { MessagesService } from '../shared/messages.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ToastrService } from 'ngx-toastr';
-<<<<<<< HEAD
-import { DataTableDirective, DataTablesModule } from 'angular-datatables';
-=======
-import { Router } from '@angular/router';
->>>>>>> 7fd27a0d1d463fcdeb0abcb1a8a750bd5d6120c4
 
 @Component({
   selector: 'app-chat',
@@ -20,9 +15,8 @@ export class ChatComponent implements OnInit {
   
   constructor(private service:MessagesService,
     private firestore:AngularFirestore,
-    private toastr:ToastrService,
-    private router:Router
-    ) {
+    private toastr:ToastrService) {
+   
      }
 
   ngOnInit() {
@@ -48,8 +42,5 @@ export class ChatComponent implements OnInit {
      this.toastr.warning("Deleted Successfully");
     }
   } 
-  openDialog(){
-    this.router.navigate(['reply']);
-  }
 
 }

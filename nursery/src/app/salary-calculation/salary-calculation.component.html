@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+  <body class="w3-light-grey">
+    <app-dashboard-frame></app-dashboard-frame>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+          <h3 style="color:deeppink">Teacher Attendance</h3>
+          <br>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <form (submit)="getSalary()">
+                <div class="row">
+                  <div class="col-md-3"></div><br>
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput placeholder="Teacher ID Number" [(ngModel)]="teacherId" name="teacherId">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Per Day Rate" [(ngModel)]="perDayRate" name="perDayRate">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Allowances" [(ngModel)]="allowances" name="allowances">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Advance" [(ngModel)]="advance" name="advance">
+                    </mat-form-field>
+                    <button type="submit" class="btn btn-lg btn-primary" (click)="getSalary()">submit</button>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div *ngIf="days">Worked Days: {{ days }}</div>
+          <div *ngIf="salary">Salary: Rs.{{ salary }}</div>
+      </div>
+    
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+      
+    </footer>
+  </div> 
+  </body>
+</html>
+
+
+
+
+
+  

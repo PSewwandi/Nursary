@@ -32,8 +32,6 @@ export class ForumAdminListComponent implements OnInit,OnDestroy,AfterViewInit {
     ) { }
 
   ngOnInit():void {
-    
-
     this.service.getPost().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {
