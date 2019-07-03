@@ -34,14 +34,15 @@ export class ViewTeacherAttendanceComponent implements OnInit {
 }
 viewAttendance( form:NgForm){
   let date = moment(new Date(form.value.date)).format("YYYY-MM-DD");
-  
   this.service.getAttendance(date).subscribe(actionArray=>{
     this.attend=actionArray.map(item=>{
       return{
-        ...item.payload.doc.get('attendance')
+        ...item.payload.doc.get('teacherattendance')
             }
     });
+    alert(this.attend);
     if(this.attend.length>0){
+      //alert(date);
       for(let i of this.attend){
         for(let v of Object.values(i)){
           this.listVal.push(v);

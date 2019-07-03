@@ -16,7 +16,7 @@ export class TeacherService {
     return this.firestore.collection('teachers',ref=> ref.orderBy('tNumber')).snapshotChanges();
   }
   getAttendance(date){
-    return this.firestore.collection('teacherattendance',ref=>ref.where('date','==',date)).snapshotChanges();
+    return this.firestore.collection('teacherattendance',ref=>ref.where('day','==',date)).snapshotChanges();
   }
 
   getTeacher(id){
